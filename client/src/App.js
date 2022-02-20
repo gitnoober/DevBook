@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,23 +9,44 @@ import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import "./App.css";
+import Alert from "./components/layout/Alert";
+import { loadUser } from "./actions/auth";
 
-const App = () => (
-  <Router>
-    <Fragment>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Landing />} />
-      </Routes>
-      <section className="container">
-        <Routes>
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/login" element={<Login />} />
-        </Routes>
-      </section>
-    </Fragment>
-  </Router>
-);
+// Redux
+import { Provider } from "react-redux";
+import store from "./store";
+
+import "./App.css";
+import setAuthToken from "./utils/setAuthToken";
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token); // put it in the axios header
+}
+
+const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []); // empty brackets - only runs once (componentdidmount)
+
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Landing />} />
+          </Routes>
+          <section className="container">
+            <Alert />
+            <Routes>
+              <Route exact path="/register" element={<Register />} />
+              <Route exact path="/login" element={<Login />} />
+            </Routes>
+          </section>
+        </Fragment>
+      </Router>
+    </Provider>
+  );
+};
 
 export default App;

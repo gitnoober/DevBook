@@ -15,7 +15,7 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
@@ -254,7 +254,7 @@ img {
   display: block;
   width: 100%;
   padding: 0.4rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
 }
 

@@ -1,10 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
 import Register from "./components/auth/Register";
@@ -19,6 +14,8 @@ import AddEducation from "./components/profile-forms/AddEducation";
 import EditProfile from "./components/profile-forms/EditProfile";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
+import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
 
 // Redux
 import { Provider } from "react-redux";
@@ -75,6 +72,16 @@ const App = () => {
                 exact
                 path="/add-education"
                 element={<PrivateRoute component={AddEducation} />}
+              />
+              <Route
+                exact
+                path="/posts"
+                element={<PrivateRoute component={Posts} />}
+              />
+              <Route
+                exact
+                path="/posts/:id"
+                element={<PrivateRoute component={Post} />}
               />
             </Routes>
           </section>

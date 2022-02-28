@@ -7,7 +7,8 @@
     "start": "node server",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Priyanshu Singh",
   "license": "MIT",
@@ -20,7 +21,7 @@
     "gravatar": "^1.8.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.1",
-    "normalize-url": "^7.0.3"
+    "normalize-url": "^5.3.0"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",

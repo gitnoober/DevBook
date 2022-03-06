@@ -20,9 +20,10 @@ Connect/share and rant with fellow devs, build on MERN stack.
 ## App functionality
 
 - Visitors can register using Name, email and password.
-- Visitors can also the number of registered devs and view their profile.
-- Registered users can then complete their profile by adding Education and Experience tables.
-- App uses Gravatar, so if you have a Gravatar, that will be automatically added as your display picture. 
+- Visitors can also see, registered devs and their profile.
+- Registered users can then complete their profile by adding their Education and Experience tables.
+- App uses Gravatar, so if you have Gravatar, that will be automatically added as your display picture.
+- Users can also see the repos, stars, watchers and forks of other devs.
 - Logged in users can can view other peoples posts,comment,like,unlike and can add their own post in the feed.
 
 <p align="center">

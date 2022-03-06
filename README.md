@@ -60,7 +60,7 @@ DevBook `<br>
 **Step 3**<br>
 Run `npm install` to install the yarn packages from the `package.json` file.<br>
 **Step 4**<br>
-Run `npm run dev` to start the webpack server concurrently with the node server.
+Run `npm run dev` to start the webpack server concurrently with the node server.<br>
 **Step 5**<br>
 Most important, enjoy the app!<br>
 
